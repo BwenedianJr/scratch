@@ -20,25 +20,16 @@
  * THE SOFTWARE.
  */
 
-var fullscreen = navigator.standalone ||
-    window.matchMedia('(max-device-width: 800px) and (max-device-height: 800px)').matches;
-
-window.onload = function() {
-    var url = "https://freudenbergs.de/vanessa/squeakjs/scratch/Scratch.image";
-    SqueakJS.runSqueak(url, sqCanvas, {
-        appName: "Scratch",
-        fullscreen: fullscreen,
-        header: sqHeader,
-        footer: sqFooter,
-        spinner: sqSpinner,
-        fullscreenCheckbox: sqFullscreen,
-        root: "/Scratch",
-        templates: ["Projects", "Media", "Help", "locale"],
-    });
-};
-
-if (addToHomescreen.isStandalone)
-    fullscreen = true;
-else addToHomescreen({
-    appID: 'squeakjs.scratch.add2home',
-});
+<html>
+            <head>
+                <script src="squeak.js"></script>
+                <script>
+                    window.onload = function() {
+                        SqueakJS.runSqueak("Whiskers.image", sqCanvas, { https://squeak.js.org/run/#image=https://github.com/NoMod-Programming/Whiskers/raw/master/Build/Whiskers.image });
+                    }
+                </script>
+            </head>
+            <body>
+                <canvas id="sqCanvas"></canvas>
+            </body>
+        </html>
